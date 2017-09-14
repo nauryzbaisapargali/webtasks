@@ -1,0 +1,42 @@
+.menu{
+	margin: 10px;
+}
+.item{
+	height: 30%;
+	width: 30%;
+	border:1px solid red;
+	margin: 5px;
+	border-radius: 10px;
+	padding:10px;
+}
+.item .title .price{
+	border-style: hidden;
+	background-color: pink;
+	border-radius: 5px;
+	padding: 2px;
+}
+
+
+.item_urgent{
+	height: 30%;
+	width: 30%;
+	border:1px solid red;
+	margin: 5px;
+	border-radius: 10px;
+	padding:10px;
+	background-color: yellow;
+}
+
+.item_urgent .title .price{
+	border-style: hidden;
+	background-color: pink;
+	border-radius: 5px;
+	padding: 2px;
+}
+.main_body .text_for{
+	font-weight: bold;
+}
+.city{
+	font-weight: bold;
+}
+

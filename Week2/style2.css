@@ -1,0 +1,18 @@
+h1{
+	color:green;
+}
+span{
+	color:red;
+}
+.list{
+	border:1px solid red;
+	width: 40%;
+	border-radius: 10px;
+	font-size: 20px;
+}
+.list span{
+	color:blue;
+}
+.list .retake span{
+	color:red;
+}
