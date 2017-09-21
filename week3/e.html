@@ -1,0 +1,40 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    *{margin:0px;padding:0px;}
+    html,body{height:100%;min-height:100%;}
+    #body{position:relative;min-height:100%;width:100%;background:#ddd;}
+    #bg-left{position:absolute;top:0px;left:0px;bottom:0px;width:50%;z-index:1;background:red;}
+    #content-left{position:relative;width:50%;float:left;z-index:2;}
+    #bg-right{position:absolute;top:0px;right:0px;bottom:0px;width:50%;z-index:1;background:#bbb;}
+    #content-right{position:relative;margin:2%;width:50%;float:right;z-index:2;}
+    #separate{position:relative;height:0px;width:0px;z-index:0;}
+  </style>
+</head>
+<body>
+  <div id="body">
+    <div id="bg-left"></div>
+    <div id="bg-right"></div>
+    <div id="content-left">Web Technologies
+      <br><br><br><br><br><br><br><br>
+    </div>
+    <div id="content-right">
+      Syllabus
+      <div id="separate">
+        <ul>
+          <li><a href="#">Week #1</a> Introduction to HTML</li>
+          <li><a href="#">Week #2</a> CSS Basics</li>
+          <li><a href="#">Week #3</a> CSS Box model</li>
+          <li><a href="#">Week #4</a> Flex box model</li>
+        </ul>
+      </div>
+    </div>
+    
+      
+    </div>
+
+  </div>
+</body>
+</html>

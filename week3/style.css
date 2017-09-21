@@ -1,0 +1,23 @@
+.letters{
+	border:2px solid #CD5C5C;
+	
+}
+.letters div{
+	height: 15px;
+	width: 15px;
+	border: thin;
+	border-style: hidden;
+	background-color: #CD5C5C;
+	border-radius: 100%;
+	display: inline-flex;
+	background:#B22222;
+	color:white;
+	text-align: center;
+	font-size: 45;
+	margin: 3px;
+	padding: 5px;
+	justify-content: center;
+	align-items: center;
+
+}
+
