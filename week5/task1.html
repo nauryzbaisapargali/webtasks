@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Task</title>
+	<style type="text/css">
+		#main{
+			width: 50%;
+			margin-left:200px;
+		}
+		.images{
+			display: inline-block;
+		}
+		.images img{
+			width: 15%;
+			margin-left: 150px;
+		}
+	</style>
+</head>
+<body>
+
+	<div>
+		<img id="main" src="1.jpg"/>
+		<div class="images">
+			<img id="1"  src="2.jpg" onClick="ImageCick(1)"/>
+			<img id="2" src="3.jpg" onClick="ImageCick(2)"/>
+			<img id="3" src="4.jpg" onClick="ImageCick(3)"/>
+		</div>
+	</div>
+
+	<script type="text/javascript">
+		function ImageCick(integer){
+			switch(integer) {
+				case 1: document.getElementById('main').src = "2.jpg"; break;
+				case 2: document.getElementById('main').src = "3.jpg"; break;
+				case 3: document.getElementById('main').src = "4.jpg"; break;
+			}
+		}
+
+
+	</script>
+</body>
+</html>
