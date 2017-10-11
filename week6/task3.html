@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <style>
+		#cars{
+		  display:flex;
+		  flex-wrap:wrap;
+		}
+		.card{
+		  position:relative;
+		  width:100px;
+		  margin:5px;
+		  padding-right: 200px;
+		}
+		.card .basket{
+		  background-color:white;
+		  position:absolute;
+		  right:30px;
+		  top:5px;
+		  z-index:9;
+		}
+		#insideBasket{
+		  border:1px solid red;
+		  text-align:center;
+		}
+	</style>
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="script3.js" defer></script>
+  </head>
+
+  <body>
+    <div id="insideBasket"><span id="items">0</span> items, total: <span id="sum">0</span>$</div>
+    <div id="cars">
+    	<div class="card">
+    		<img src="1.jpg">
+    		<a href="javascript:void(0)" class="basket" price="20000" select="0">
+    			<img width="30px" class="icon" src="https://image.flaticon.com/icons/png/512/2/2772.png"/>
+    		</a>
+    	</div>
+
+    	<div class="card">
+    		<img src="6.jpg">
+    		<a href="javascript:void(0)" class="basket" price="30000" select="0">
+    			<img width="30px" class="icon" src="https://image.flaticon.com/icons/png/512/2/2772.png"/>
+    		</a>
+    	</div>
+
+    	<div class="card">
+    		<img src="b4.jpg">
+    		<a href="javascript:void(0)" class="basket" price="40000" select="0">
+    			<img width="30px" class="icon" src="https://image.flaticon.com/icons/png/512/2/2772.png"/>
+    		</a>
+    	</div>
+    </div>
+  </body>
+
+</html>
