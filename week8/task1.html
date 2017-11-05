@@ -1,0 +1,54 @@
+<html>
+<head>
+<style>
+#news{
+	border:1px solid red;
+	width:400px;
+	height:300px;
+}
+</style>
+</head>
+<body>
+
+<div id="news"></div>
+<button id="sport">Load Sport news</button>
+<button id="politics">Load Politics news</button>
+<button id="bussiness">Load Bussiness news</button>
+
+
+<script>
+	function call(event){
+		fetch("http://demo4296963.mockable.io/news-sport").then(onSucces);
+	}
+	function onSucces(response){
+		return response.text().then(process);
+	}
+	function process(innertext){
+		document.getElementById('news').innerHTML=innertext;
+	}
+	document.getElementById('sport').addEventListener("click",call);
+
+	function call2(event){
+		fetch("http://demo4296963.mockable.io/news-politics").then(onSucces2);
+	}
+	function onSucces2(response){
+		return response.text().then(process2);
+	}
+	function process2(innertext){
+		document.getElementById('news').innerHTML=innertext;
+	}
+	document.getElementById('politics').addEventListener("click",call2);
+
+	function call3(event){
+		fetch("http://demo4296963.mockable.io/news-bussiness").then(onSucces3);
+	}
+	function onSucces3(response){
+		return response.text().then(process3);
+	}
+	function process3(innertext){
+		document.getElementById('news').innerHTML=innertext;
+	}
+	document.getElementById('bussiness').addEventListener("click",call3);
+</script>
+</body>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <style>
+      #cards .card{
+        border:1px solid red;
+        display:flex;
+        width:300px;
+      }
+      #cards .card .title{
+        flex-grow: 1;
+      }
+      #cards .card .price{
+        font-weight: bold;
+        padding-right: 20px;
+      }
+      #loading{
+        display: none;
+      }
+      #cards{
+        width:300px;
+        height:200px;
+        border: 1px solid blue;
+      }
+    </style>
+
+  </head>
+
+  <body>
+    <button id="sport">Load</button>
+    <div>
+      <button id="sortByMaker">Sort by maker</button>
+      <button id="sortByPrice">Sort by price</button>
+    </div>
+    <div id="cards">
+      <img width="300px" height="200px" id="loading" src="https://upload.wikimedia.org/wikipedia/commons/b/b1/Loading_icon.gif"/>
+    </div>
+
+
+    <script defer>
+    let arr=null;
+	    function call(event){
+        fetch("http://demo4296963.mockable.io/listCars").then(onSucces);
+      }
+      function onSucces(response){
+        document.getElementById('loading').style.display = "inline-block";
+        document.getElementById('sport').textContent="Loading ...";
+        setTimeout(function(){
+          document.getElementById('loading').style.display= 'none';
+          document.getElementById('sport').textContent = "Items are loaded";
+          //arr = response.json();
+          return response.json().then(process);
+        },2000);
+      }
+      function process(responses){
+        arr=responses;
+        for (let response of responses){
+          var card = document.createElement('div');
+          card.setAttribute('class','card');
+          var title = document.createElement('div');
+          title.setAttribute('class','title');
+          let words = response.maker + " " + response.model;
+          title.innerHTML=words;
+          styleTitle = title.style;
+          card.appendChild(title);
+          var price = document.createElement('div');
+          price.setAttribute('class','price');
+          price.innerHTML=response.price;
+          card.appendChild(price);
+          document.getElementById('cards').appendChild(card);
+        }
+      }
+      function sortbymaker(){
+          document.getElementById('cards').innerHTML='';
+          arr.sort((a,b) => a.maker.localeCompare(b.maker));
+          process(arr);
+      }
+      function sortbyprice(){
+        document.getElementById('cards').innerHTML='';
+          arr.sort((a,b) => a.price-b.price);
+          process(arr);
+      }
+      document.getElementById('sport').addEventListener('click', call);
+      document.getElementById('sortByMaker').addEventListener('click', sortbymaker);
+      document.getElementById('sortByPrice').addEventListener('click', sortbyprice);
+    </script>
+  </body>
+
+</html>
